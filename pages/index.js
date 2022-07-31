@@ -1,7 +1,7 @@
 import { NextPage } from 'next'
 import Header from '../components/Header'
 import Trending from '../components/Trending'
-
+import CMCTable from '../components/cmc-table/CMCTable'
 const Home = () => {
   return (
     <div className='min-h-screen'>
@@ -9,7 +9,7 @@ const Home = () => {
       <div className='mt-10' />
       <Trending />
       <div className='mt-20'/>
-      {/* <CMCtable /> */}
+      <CMCTable />
     </div>
   )
 }
