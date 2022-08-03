@@ -4,6 +4,7 @@ import usd from '../../assets/svg/usd'
 import { useEffect, useState } from 'react'
 import CMCpriceConverter from '../../components/cmc-table/CMCpriceConverter'
 import Graph from '../../components/cmc-table/Graph'
+import Chat from '../../components/cmc-table/Chat'
 
 const styles = {
     activeTab: `p-1 px-2 mr-2 rounded-lg bg-[#171924]`,
@@ -32,7 +33,7 @@ const Currencies = () => {
         const urlParams = new URLSearchParams(queryString)
 
         setCoinName(urlParams.get('coin'))
-        setPrice(urlParams.get('price').toLocaleString())
+        setPrice(Number(urlParams.get('price')).toLocaleString())
         setCoinSymbol(urlParams.get('symbol'))
 
     }
@@ -91,7 +92,7 @@ const Currencies = () => {
                         />
                     </div>
                     <div className='pt-10 ml-5'>
-                        {/* <Chat /> */}
+                        <Chat />
                     </div>
                 </div>
             </main>
