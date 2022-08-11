@@ -26,7 +26,7 @@ const ChatCard = ({content = '', timestamp, sender, bullish, senderAvatar, likes
         <div className={styles.chatCardWrapper}>
             <div className={styles.flexCenter}>
                 <div>
-                    <Image width={40} height={40} src={'/../../assets/svg/share'} className='rounded-full' alt='Avatar' />
+                    <Image width={40} height={40} src={senderAvatar} className='rounded-full' alt='Avatar' />
                 </div>
                 <div className={styles.labelsContainer}>
                     {sender}
