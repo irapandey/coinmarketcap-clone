@@ -27,7 +27,7 @@ const Chat = () => {
   const [message, setMessage] = useState('')
   const [bullishValue, setBullishValue] = useState(true)
 
-  const {gun, getMessage, state} = useContext(GunContext)
+  const {gun, getMessages, state} = useContext(GunContext)
 
   useEffect(() => {
     getMessages('GUN_REF_7')
@@ -43,6 +43,7 @@ const Chat = () => {
         })
       )
     })
+    return uniqueArray
   }
   const sendMessage = () => {
 
@@ -95,7 +96,7 @@ const Chat = () => {
               </div>
               &nbsp; &nbsp;
               <div className={
-                bullishValue ? styles.bearishLabel : syles.activeBearishLabel
+                bullishValue ? styles.bearishLabel : styles.activeBearishLabel
               }
               onClick={() => setBullishValue(false)}
               >
@@ -129,19 +130,22 @@ const Chat = () => {
         <Button label = 'Post' onPress = {sendMessage} />
       </div>
        
-       {formattedMessagesArray().slice(0).reverse().map((message, index) => (
-        <ChatCard 
-        key = {index}
-        sender = {message.sender}
-        senderUsername={message.username}
-        senderAvatar='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
-        bullish={message.isBullish}
-        timestamp={message.createdAt}
-        content={message.content}
-        likes='2.3K'
-        comments='11K'
-        />
-       ))}
+      {formattedMessagesArray()
+        .slice(0)
+        .reverse()
+        .map((message, index) => (
+          <ChatCard
+            key={index}
+            sender={message.sender}
+            senderUsername={message.username}
+            senderAvatar='https:/encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3OCSMFIW5fZ3vSN6yGpD-w-6SsL2_ZPA_sw&usqp=CAU'
+            bullish={message.isBullish}
+            timestamp={message.createdAt}
+            content={message.content}
+            likes='2.7K'
+            comments='19K'
+          />
+        ))}
     </>
   )
 }

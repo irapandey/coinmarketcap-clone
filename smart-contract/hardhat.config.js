@@ -10,8 +10,8 @@ module.exports = {
     hardhat: {
     },
     rinkeby: {
-      url: "https://eth-rinkeby.alchemyapi.io/v2/XnamBIJbGGrgxuhT7bhDRF_0_O9JCA9n",
-      accounts: ['6ea7fcedd1a6be6ab791c833c2308077955e811ff470810811963493b416a3da']
+      url: process.env.ALCHEMY_KEY,
+      accounts: [process.env.PRIVATE_KEY]
     }
   }
 };
